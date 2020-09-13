@@ -1,23 +1,20 @@
-//./lasurdo_p1 sample_1.txt 010101010
 #include <iostream>
 #include <fstream>
-#include <vector>
 #include <string>
 #include <cstring>
-#include <algorithm>
 
 using namespace std;
 
 int main(int argc, char *argv[]) {
-  string marketNames[500];
+        string marketNames[500];
 	int marketPrices[500];
 	string setNames[500][500];
 	int setPrices[500][500];
 	int spending[500];
 	int set = 0;
-
+       
 	fstream file1(argv[1], fstream::in);
-	fstream file2(argv[3], fstream::in);
+	fstream file2(argv[2], fstream::in);
 
 	if(file1.is_open()){
 		int first;
@@ -54,7 +51,6 @@ int main(int argc, char *argv[]) {
 			}
 		file2.close();
 	}
-
 
 
 }
