@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 	int spending[500];
 	int set = 0;
        
-	fstream file1(argv[1], fstream::in);
+	/*fstream file1(argv[1], fstream::in);
 	fstream file2(argv[2], fstream::in);
 
 	if(file1.is_open()){
@@ -50,7 +50,7 @@ int main(int argc, char *argv[]) {
 				set++;
 			}
 		file2.close();
-	}
+	}*/
 
 
 }
