@@ -9,9 +9,9 @@
 using namespace std;
 
 int main(int argc, char *argv[]) {
-	string marketNames[500]
+  string marketNames[500];
 	int marketPrices[500];
-	string setNames[500][500]
+	string setNames[500][500];
 	int setPrices[500][500];
 	int spending[500];
 	int set = 0;
@@ -38,21 +38,21 @@ int main(int argc, char *argv[]) {
 	if(file2.is_open()){
 			while(!file2.eof() && !file2.fail()) {
 				int first;
-				int second
+				int second;
 				file2 >> first;
 				file2 >> second;
 				spending[set] = second;
 				for(int i = 0; i< first; i++) {
 					string setName;
 					int setPrice;
-					file1 >> setName;
-					file1 >> setPrice;
-					setNames[set][i] = marketName;
-					setPrices[set][i] = marketPrice;
+					file2 >> setName;
+					file2 >> setPrice;
+					setNames[set][i] = setName;
+					setPrices[set][i] = setPrice;
 				}
 				set++;
 			}
-		file.close();
+		file2.close();
 	}
 
 
