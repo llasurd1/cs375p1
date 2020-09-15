@@ -1,1 +1,2 @@
-
+Size: 2 Max Profit: 2750 Num cards purchased: 2 Time Taken :2.2017e-05 seconds 
+Size: 3 Max Profit: 1100 Num cards purchased: 2 Time Taken :1.6116e-05 seconds 

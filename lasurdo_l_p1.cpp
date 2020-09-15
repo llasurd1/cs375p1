@@ -5,7 +5,7 @@
 #include <array>
 #include <cmath>
 #include <vector>
-
+#include <chrono>
 using namespace std;
 
 int main(int argc, char *argv[]) {
@@ -20,7 +20,8 @@ int main(int argc, char *argv[]) {
        
 	fstream file1(argv[2], fstream::in);
 	fstream file2(argv[4], fstream::in);
-
+	ofstream output;
+	output.open("output.txt");
 	if(file1.is_open()){
 		int first;
 		file1 >> first;
@@ -60,11 +61,14 @@ int main(int argc, char *argv[]) {
 		file2.close();
 	}
 	for(int i = 0; i<set-1; i++) {
+	  chrono::steady_clock sc;
+	  auto start = sc.now();
 	  int maxProfit = 0;
 	  vector<string> s;
 	  vector<string> m;
 	  int n = pow(2, numCards[i]);
 	  for(int j = 0; j<n; j++) {
+	    
 	    int totalCost=0;
 	    for(int k = 0; k<numCards[i]; k++) {
 	      if((j&(1 << k))!=0) {
@@ -91,13 +95,9 @@ int main(int argc, char *argv[]) {
 	    }
 	    s.clear();
 	  }
-	  
-	  cout << maxProfit << " ";
-	   for(int y = 0; y<m.size(); y++) {
-	     cout<<m[y] << " ";
-	  }
-	  cout << "\n";
+	  auto end = sc.now();
+	  auto time_span = static_cast<chrono::duration<double>>(end-start);
+	  output << "Size: " << numCards[i] << " Max Profit: " << maxProfit << " Num cards purchased: " << m.size() << " Time Taken :" << time_span.count()<< " seconds " << "\n"; 
 	}
-	
-	
+     
 }
